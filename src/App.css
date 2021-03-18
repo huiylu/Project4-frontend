@@ -15,13 +15,13 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
 .App-link {
@@ -35,4 +35,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.header {
+  background-color: #1c1d1f;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  color: white;
+}
+
+.header-title {
+  margin: auto;
+  padding: 0%;
+  border: 0;
+}
+
+.poe-img{
+  width: 200px;
+  height: 200px;
+  border: 0;
+  padding: 0%;
+  margin: 0;
 }

@@ -1,35 +1,30 @@
+import { useEffect } from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
+import React from 'react';
+// es6
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
-const products = [ {
-        'id': 1,
-        'name': 'Test',
-        'price': '$100'
-    },
-    {
-        'id': 2,
-        'name': 'Test2',
-        'price': '$200'
-    },
-    {
-        'id': 3,
-        'name': 'Test3',
-        'price': '$300'
-    } ];
-const columns = [{
-  dataField: 'id',
-  text: 'Product ID'
-}, {
-  dataField: 'name',
-  text: 'Product Name'
-}, {
-  dataField: 'price',
-  text: 'Product Price'
-}];
+const Table = (props) => {
+  // const products = [ props.items ];
+  const columns = [{
+      dataField: 'number',
+      text: 'Amount Seen',
+      sort: true
+    }, {
+      dataField: 'name',
+      text: 'Unique Name',
+      sort: true
+  }];
 
-const Table = () => {
-    return (
-        <BootstrapTable keyField='id' data={ products } columns={ columns } />
-    )
+  useEffect(() => {
+      setTimeout(props.getProduct() , 300);
+      
+  });
+  console.log(props.items)
+  return (
+
+      <BootstrapTable keyField='id' data={ props.items } columns={ columns } striped hover condensed />
+  )
 }
 
 export default Table;
